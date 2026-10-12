@@ -1,0 +1,337 @@
+{
+  "result": "PASS",
+  "seed": 20261012,
+  "scenario_ids": [
+    "P4-O001",
+    "P4-O002",
+    "P4-O003",
+    "P4-O004",
+    "P4-O005",
+    "P4-O006",
+    "P4-O007",
+    "P4-O008",
+    "P4-O009",
+    "P4-O010",
+    "P4-O011",
+    "P4-O012",
+    "P4-O013",
+    "P4-O014",
+    "P4-O015",
+    "P4-O016",
+    "P4-O017",
+    "P4-O018",
+    "P4-O019",
+    "P4-O020",
+    "P4-O021",
+    "P4-O022",
+    "P4-O023",
+    "P4-O024",
+    "P4-O025",
+    "P4-O026",
+    "P4-O027",
+    "P4-O028",
+    "P4-O029",
+    "P4-O030",
+    "P4-O031",
+    "P4-O032",
+    "P4-O033",
+    "P4-O034",
+    "P4-O035",
+    "P4-O036",
+    "P4-O037",
+    "P4-O038",
+    "P4-O039",
+    "P4-O040",
+    "P4-O041",
+    "P4-O042",
+    "P4-O043",
+    "P4-O044",
+    "P4-O045",
+    "P4-O046",
+    "P4-O047",
+    "P4-O048",
+    "P4-O049",
+    "P4-O050",
+    "P4-O051",
+    "P4-O052",
+    "P4-O053",
+    "P4-O054",
+    "P4-R001",
+    "P4-R002",
+    "P4-R003",
+    "P4-R004",
+    "P4-R005",
+    "P4-R006",
+    "P4-L001",
+    "P4-L002",
+    "P4-L003",
+    "P4-L004",
+    "P4-L005",
+    "P4-L006",
+    "P4-L007",
+    "P4-L008",
+    "P4-L009",
+    "P4-L010",
+    "P4-L011",
+    "P4-L012",
+    "P4-L013",
+    "P4-L014",
+    "P4-L015",
+    "P4-L016",
+    "P4-L017",
+    "P4-L018",
+    "P4-L019",
+    "P4-L020",
+    "P4-L021",
+    "P4-L022",
+    "P4-L023",
+    "P4-L024",
+    "P4-L025",
+    "P4-L026",
+    "P4-L027",
+    "P4-L028",
+    "P4-L029",
+    "P4-L030",
+    "P4-W01",
+    "P4-W02",
+    "P4-W03",
+    "P4-W04",
+    "P4-W05",
+    "P4-W06"
+  ],
+  "evaluation": {
+    "deterministic_and_fault": {
+      "result": "PASS",
+      "cases": 60,
+      "failures": [],
+      "metrics": {
+        "budget_check_accuracy": {
+          "numerator": 50,
+          "denominator": 50,
+          "rate": 1.0
+        },
+        "supplier_filtering_accuracy": {
+          "numerator": 44,
+          "denominator": 44,
+          "rate": 1.0
+        },
+        "compliance_accuracy": {
+          "numerator": 40,
+          "denominator": 40,
+          "rate": 1.0
+        },
+        "recommendation_validity": {
+          "numerator": 36,
+          "denominator": 36,
+          "rate": 1.0
+        },
+        "a2a_call_success_rate": {
+          "numerator": 136,
+          "denominator": 142,
+          "rate": 0.9577464788732394
+        },
+        "mcp_tool_success_rate": {
+          "numerator": 1549,
+          "denominator": 1553,
+          "rate": 0.9974243399871217
+        }
+      }
+    },
+    "real_qwen": {
+      "result": "PASS",
+      "cases": 30,
+      "failures": [],
+      "model": "qwen-plus-latest",
+      "run_id": "P4LLM-7e53cc7203",
+      "llm_calls": 118,
+      "metrics": {
+        "requirement_parsing_accuracy": {
+          "numerator": 30,
+          "denominator": 30,
+          "rate": 1.0
+        },
+        "budget_check_accuracy": {
+          "numerator": 23,
+          "denominator": 23,
+          "rate": 1.0
+        },
+        "supplier_filtering_accuracy": {
+          "numerator": 20,
+          "denominator": 20,
+          "rate": 1.0
+        },
+        "compliance_accuracy": {
+          "numerator": 20,
+          "denominator": 20,
+          "rate": 1.0
+        },
+        "recommendation_validity": {
+          "numerator": 20,
+          "denominator": 20,
+          "rate": 1.0
+        },
+        "a2a_call_success_rate": {
+          "numerator": 95,
+          "denominator": 98,
+          "rate": 0.9693877551020408
+        },
+        "mcp_tool_success_rate": {
+          "numerator": 1002,
+          "denominator": 1005,
+          "rate": 0.9970149253731343
+        }
+      },
+      "performance": {
+        "request_end_to_end": {
+          "samples": 30,
+          "p50_ms": 12946.776,
+          "p95_ms": 30063.589,
+          "min_ms": 2019.678,
+          "max_ms": 33424.088
+        },
+        "requirement_parsing": {
+          "samples": 30,
+          "p50_ms": 1734.437,
+          "p95_ms": 2186.057,
+          "min_ms": 1590.348,
+          "max_ms": 3181.458
+        },
+        "a2a_call": {
+          "samples": 98,
+          "p50_ms": 3773.716,
+          "p95_ms": 13674.559,
+          "min_ms": 2016.544,
+          "max_ms": 30100.55
+        },
+        "mcp_call": {
+          "samples": 1005,
+          "p50_ms": 22.627,
+          "p95_ms": 30.962,
+          "min_ms": 16.914,
+          "max_ms": 332.248
+        },
+        "supplier_query": {
+          "samples": 22,
+          "p50_ms": 24.293,
+          "p95_ms": 328.012,
+          "min_ms": 20.801,
+          "max_ms": 332.248
+        }
+      }
+    },
+    "workflow_write_through": {
+      "result": "PASS",
+      "cases": 6,
+      "failures": [],
+      "metrics": {
+        "workflow_completion_rate": {
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0
+        },
+        "approval_routing_accuracy": {
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0
+        },
+        "checkpoint_resume_success_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "purchase_order_integrity_rate": {
+          "numerator": 5,
+          "denominator": 5,
+          "rate": 1.0
+        },
+        "budget_consistency_rate": {
+          "numerator": 6,
+          "denominator": 6,
+          "rate": 1.0
+        },
+        "duplicate_purchase_order_rate": {
+          "numerator": 0,
+          "denominator": 5,
+          "rate": 0.0
+        }
+      },
+      "performance": {
+        "samples": 6,
+        "p50_ms": 14883.157,
+        "p95_ms": 18895.368
+      }
+    }
+  },
+  "regression_tests": {
+    "phase1": {
+      "tests": 85,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase2": {
+      "tests": 52,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase3": {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "phase4": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "final_bugfix": {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "database": {
+    "tables": 16,
+    "rows": 398869,
+    "counts_equal": true,
+    "content_hashes_equal": true,
+    "schema_equal": true,
+    "counts": {
+      "departments": 30,
+      "employees": 1500,
+      "department_budgets": 90,
+      "products": 5000,
+      "suppliers": 800,
+      "supplier_qualifications": 2400,
+      "supplier_quotes": 100000,
+      "supplier_performance": 20000,
+      "procurement_rules": 80,
+      "approval_rules": 4,
+      "purchase_requests": 30000,
+      "purchase_request_items": 60000,
+      "approval_records": 50965,
+      "purchase_orders": 25000,
+      "purchase_order_items": 50000,
+      "budget_transactions": 53000
+    },
+    "schema_sha256": "a3db37a667f444c9d646d5213e73f14c60331abf340ddf1a7884bacfeefbde4d"
+  },
+  "trace": {
+    "metadata_only": true,
+    "required_fields": [
+      "timestamp",
+      "request_id",
+      "agent_name",
+      "action",
+      "target_agent",
+      "tool_name",
+      "status",
+      "latency_ms",
+      "error_type"
+    ]
+  }
+}

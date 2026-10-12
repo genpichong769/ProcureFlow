@@ -1,0 +1,101 @@
+{
+  "result": "PASS",
+  "seed": 20261012,
+  "evaluation_sets": {
+    "deterministic_and_fault": {
+      "cases": 60,
+      "passed": 60
+    },
+    "real_qwen": {
+      "cases": 30,
+      "passed": 30,
+      "model": "qwen-plus-latest",
+      "run_id": "P4LLM-7e53cc7203",
+      "llm_calls": 118
+    },
+    "workflow_write_through": {
+      "cases": 6,
+      "passed": 6
+    }
+  },
+  "real_qwen_metrics": {
+    "requirement_parsing_accuracy": {
+      "numerator": 30,
+      "denominator": 30,
+      "rate": 1.0
+    },
+    "budget_check_accuracy": {
+      "numerator": 23,
+      "denominator": 23,
+      "rate": 1.0
+    },
+    "supplier_filtering_accuracy": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "compliance_accuracy": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "recommendation_validity": {
+      "numerator": 20,
+      "denominator": 20,
+      "rate": 1.0
+    },
+    "a2a_call_success_rate": {
+      "numerator": 95,
+      "denominator": 98,
+      "rate": 0.9693877551020408
+    },
+    "mcp_tool_success_rate": {
+      "numerator": 1002,
+      "denominator": 1005,
+      "rate": 0.9970149253731343
+    }
+  },
+  "performance_ms": {
+    "real_qwen_request": {
+      "samples": 30,
+      "p50_ms": 12946.776,
+      "p95_ms": 30063.589,
+      "min_ms": 2019.678,
+      "max_ms": 33424.088
+    },
+    "requirement_extraction": {
+      "samples": 30,
+      "p50_ms": 1734.437,
+      "p95_ms": 2186.057,
+      "min_ms": 1590.348,
+      "max_ms": 3181.458
+    },
+    "mcp_call": {
+      "samples": 1005,
+      "p50_ms": 22.627,
+      "p95_ms": 30.962,
+      "min_ms": 16.914,
+      "max_ms": 332.248
+    }
+  },
+  "regression_tests": {
+    "phase1": 85,
+    "phase2": 52,
+    "phase3": 18,
+    "phase4": 12,
+    "final_bugfix": 18
+  },
+  "database": {
+    "tables": 16,
+    "rows": 398869,
+    "counts_equal": true,
+    "content_hashes_equal": true,
+    "schema_equal": true,
+    "schema_sha256": "a3db37a667f444c9d646d5213e73f14c60331abf340ddf1a7884bacfeefbde4d"
+  },
+  "limitations": [
+    "Metrics describe a fixed acceptance set and do not establish universal model accuracy.",
+    "Token usage is unavailable because the gateway does not retain provider usage metadata.",
+    "Performance is from one local low-concurrency environment."
+  ]
+}

@@ -1,0 +1,46 @@
+name: procureflow
+services:
+  mysql:
+    image: mysql:8.0.43@sha256:3e646bcda0d9448ffa3d2024eef04e1bca95528ec19b9e8b76749da9d97d4a10
+    container_name: procureflow-mysql
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in .env}
+      MYSQL_DATABASE: ${DB_NAME:-procureflow}
+      MYSQL_USER: ${DB_USER:-procureflow}
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD in .env}
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --log-error=/var/log/mysql/error.log
+    volumes:
+      - type: bind
+        source: ${PROCUREFLOW_DATA_ROOT:-./.procureflow-data}/mysql/data
+        target: /var/lib/mysql
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${PROCUREFLOW_DATA_ROOT:-./.procureflow-data}/mysql/logs
+        target: /var/log/mysql
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ${PROCUREFLOW_DATA_ROOT:-./.procureflow-data}/mysql/backup
+        target: /backup
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: ./deploy/mysql/init
+        target: /docker-entrypoint-initdb.d
+        read_only: true
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=\"$$MYSQL_ROOT_PASSWORD\" mysql --protocol=socket -uroot -Nse 'SELECT 1' >/dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 40s
+    logging:
+      driver: "none"

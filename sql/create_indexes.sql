@@ -1,0 +1,10 @@
+CREATE INDEX idx_quote_candidate ON supplier_quotes(product_id,status,valid_until,delivery_days,unit_price);
+CREATE INDEX idx_quote_supplier ON supplier_quotes(supplier_id,status,valid_until);
+CREATE INDEX idx_quote_price ON supplier_quotes(product_id,unit_price);
+CREATE INDEX idx_budget_time ON budget_transactions(department_id,transaction_time,id);
+CREATE INDEX idx_budget_request ON budget_transactions(request_id,transaction_type);
+CREATE INDEX idx_qualification_valid ON supplier_qualifications(supplier_id,status,valid_until);
+CREATE INDEX idx_request_department_status ON purchase_requests(department_id,status);
+CREATE INDEX idx_order_supplier_status ON purchase_orders(supplier_id,status);
+CREATE INDEX idx_product_name ON products(product_name);
+CREATE INDEX idx_rule_category ON procurement_rules(enabled,category,priority);
